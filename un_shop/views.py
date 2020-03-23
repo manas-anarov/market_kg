@@ -10,6 +10,13 @@ from .serializers import (
 	addSerializer,
 	)
 
+from .forms import (
+	PostForm,
+	)
+
+
+from django.urls import reverse_lazy
+
 
 class CreateOrder(CreateAPIView):
 	serializer_class = addSerializer
@@ -19,4 +26,20 @@ class CreateOrder(CreateAPIView):
 class CreateViewFront(CreateView):
 	model = OrderItem
 	template_name = "create.html"
-	fields = ['telephone', 'first_name', 'last_name', 'address']
+	success_url = "un-shop/create-front/"
+	# fields = ['telephone', 'first_name', 'last_name', 'address']
+	success_message = "Redirect successfully created!"
+	form_class = PostForm
+
+	success_url = reverse_lazy('api-un-shop:web-create')
+	# fields = [
+	# 		'telephone',
+	# 		'whatsapp',
+	# 		'first_name',
+	# 		'last_name',
+	# 		'address',
+	# 		# 'passport_foto',
+	# 	]
+
+	# def get_success_url(self):
+	# 	return reverse('api-un-shop:web-create')

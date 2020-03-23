@@ -10,6 +10,7 @@ class addSerializer(ModelSerializer):
 		model = OrderItem
 		fields = [
 			'telephone',
+			'whatsapp',
 			'first_name',
 			'last_name',
 			'address',
