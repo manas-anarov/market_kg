@@ -9,10 +9,10 @@ class addSerializer(ModelSerializer):
 	class Meta:
 		model = OrderItem
 		fields = [
-			'telephone',
-			'whatsapp',
 			'first_name',
 			'last_name',
+			'telephone',
+			'whatsapp',
 			'address',
 			# 'passport_foto',
 		]

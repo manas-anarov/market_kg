@@ -9,7 +9,6 @@ class PostForm(forms.ModelForm):
 	first_name = forms.CharField(required=True, label='Имя')
 	last_name = forms.CharField(required=True, label='Фамилия')
 	address = forms.CharField(required=True, label='Адрес')
-	# url = forms.URLField(label='Your website', required=False)
 
 	class Meta:
 		model = OrderItem
@@ -19,5 +18,4 @@ class PostForm(forms.ModelForm):
 			'first_name',
 			'last_name',
 			'address',
-			# 'passport_foto',
 		]

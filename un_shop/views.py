@@ -3,6 +3,7 @@ from django.shortcuts import render
 
 from rest_framework.generics import (CreateAPIView)
 from django.views.generic.edit import CreateView
+from django.contrib.messages.views import SuccessMessageMixin
 
 from un_shop.models import OrderItem
 
@@ -23,12 +24,12 @@ class CreateOrder(CreateAPIView):
 	queryset = OrderItem.objects.all()
 
 
-class CreateViewFront(CreateView):
+class CreateViewFront(SuccessMessageMixin, CreateView):
 	model = OrderItem
 	template_name = "create.html"
 	success_url = "un-shop/create-front/"
 	# fields = ['telephone', 'first_name', 'last_name', 'address']
-	success_message = "Redirect successfully created!"
+	success_message = "Заказ Принят"
 	form_class = PostForm
 
 	success_url = reverse_lazy('api-un-shop:web-create')
