@@ -1,5 +1,5 @@
 command = '/home/up_pro/venv/bin/gunicorn'
-pythonpath = '/home/up_pro/un_project'
+pythonpath = '/home/up_pro/market_kg'
 bind = '127.0.0.1:8003'
 workers = 5
 user = 'root'
